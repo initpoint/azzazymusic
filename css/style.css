@@ -269,7 +269,7 @@ p.tagline, .address-detail a.tagline {
     width: 100%;
     z-index: 1; }
   .page-right .page-inner .copyright {
-    display: none; }
+    display: block; }
 
 .detail-info {
   position: relative;
