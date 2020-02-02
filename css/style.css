@@ -1086,7 +1086,19 @@ p.tagline, .address-detail a.tagline {
     width: 100%; }
 
   .page-right .icon {
-    padding-top: 8px; } }
+    padding-top: 8px; }
+
+    /* .side-left{
+      order:2 !important;
+    }
+    .side-right{
+      order:1 !important;      
+    } */
+  /* .counter-content{
+  } */
+  
+  
+  }
 @media only screen and (max-width: 414px) {
   h1, h3, .side-right #countdown span,
   .side-right #countdown li.seperator {

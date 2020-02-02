@@ -121,7 +121,7 @@ function pogody(){
 	});
 	/*Typed js*/
 	$("#typed").typed({
-		strings: [" Sound Mastering", " Composing", " Concerts"],
+		strings: [" Electronic Music", " Live Concerts", " Film Scoring", " Sound Design"],
 		typeSpeed: 100,
 		backDelay: 900,
 		loop: true,
