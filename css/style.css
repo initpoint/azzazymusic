@@ -181,7 +181,8 @@ p.tagline, .address-detail a.tagline {
   .side-right #countdown {
     padding-top: 28px; }
   .side-right .counter-content {
-    padding-top: 35%; }
+    padding-top: 35%;
+   }
   .side-right #countdown span,
   .side-right #countdown li.seperator {
     color: #fff;
@@ -904,7 +905,8 @@ p.tagline, .address-detail a.tagline {
   .side-right #countdown {
     padding-top: 8px; }
   .side-right .counter-content {
-    padding-top: 41%; }
+    padding-top: 41%;
+   }
 
   .page-right .map {
     overflow: hidden;
@@ -974,7 +976,8 @@ p.tagline, .address-detail a.tagline {
     width: 100%; }
     .side.side-right .counter-content {
       padding-bottom: 80px;
-      padding-top: 80px; }
+      padding-top: 200px;
+     }
     .side.side-left {
       padding-top: 80px;
       padding-bottom: 47px; }
