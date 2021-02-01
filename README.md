@@ -1,2 +1,2 @@
-# azzazymusic
-music.azzazy.net
+# TruRate
+trurate.net
