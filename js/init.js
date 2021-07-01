@@ -121,7 +121,7 @@ function pogody(){
 	});
 	/*Typed js*/
 	$("#typed").typed({
-		strings: [" Electronic Music", " Live Concerts", " Film Scoring", " Sound Design"],
+		strings: [" Careers", " Reviews", " Discussions"],
 		typeSpeed: 100,
 		backDelay: 900,
 		loop: true,
@@ -132,7 +132,7 @@ function pogody(){
 	});
 	/*Typed js for title tag*/
 	$("#title").typed({
-		strings: ["Music", "Sounds", "Concerts"],
+		strings: ["Careers", "Reviews", "Discussions"],
 		typeSpeed: 300,
 		backDelay: 900,
 		loop: true,
