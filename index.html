@@ -1,509 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title id="title">TruRate</title>
-	<meta name="description" content="TruRate website" />
-	<meta name="keywords" content="TruRate, Careers"
-	/>
-	<meta name="author" content="TruRate" />
+.bgimg {
+  background-image: url('/w3images/forestbridge.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
 
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
 
-	<!--Fonts - changed to Source Code Pro-->
-	<link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
 
-	<!--CSS-->
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-</head>
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-<body data-ng-app="contactApp">
-	<!--Preloader-->
-	<div class="preloader-it">
-		<div class="la-anim-1"></div>
-	</div>
-	<!--/Preloader-->
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
+<body>
 
-	<!--Container-->
-	<div class="pad-zero">
-
-		<!--Splitlayout -->
-		<div id="splitlayout" class="splitlayout reset-layout">
-
-			<!--Intro-->
-			<div class="intro">
-<!--Right Content Intro-->
-<div class="side side-right">
-	<div class="bg"></div>
-	<div class="bg disappear"></div>
-	<!--Contect Nav-->
-	<div class="call-to-action contact">
-		<i class="fa fa-envelope fa-2x"></i>
-		<i class="fa fa-times fa-2x opacity-hide"></i>
-		<span class="top"></span>
-		<span class="right"></span>
-		<span class="bottom"></span>
-		<span class="left"></span>
-	</div>
-	<!--/Contect Nav-->
-
-	<div class="counter-content">
-		<div class="col-lg-8 col-md-9 col-sm-9 col-xs-9 align-center text-left">
-			<p class="tagline">The Key to One’s Heart is Hidden in Their Playlist</p>
-
-			<!--Counter-->
-			<!-- <div id="countdown">
-				<span class="days">00</span>
-			</div>
-			<span class="small-hr"></span>
-			<span class="remain-days">More Days</span> -->
-			<!--/Counter-->
-
-		</div>
-	</div>
-	<div class="trans-overlay-dark"></div>
+<div class="bgimg">
+  <div class="topleft">
+    <p>TruRate</p>
+  </div>
+  <div class="middle">
+    <h1>COMING SOON</h1>
+    <hr>
+    <p id="demo" style="font-size:30px"></p>
+  </div>
+  <div class="bottomleft">
+    <p>Careers - Reviews - Discussions</p>
+  </div>
 </div>
-<!--/Right Content Intro-->
-				<!--Left Content Intro-->
-				<div class="side side-left">
 
-					<!--About Nav-->
-					<div class="call-to-action about">
-						<i class="fa fa-info fa-2x"></i>
-						<i class="fa fa-times fa-2x opacity-hide"></i>
-						<span class="top"></span>
-						<span class="right"></span>
-						<span class="bottom"></span>
-						<span class="left"></span>
-					</div>
-					<!--/About Nav-->
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
 
-					<div class="col-lg-8 col-md-9 col-sm-9 col-xs-9 align-center content-wrap">
-						<!--main content-->
-						<div class="main">
-							<!--Content with Typing Intro-->
-							<section id="home" class="section active">
-								<div class="preloader"></div>
-								<div class="align-center text-left">
-								
-									<p class="animated fadeInLeft" data-animation="fadeInLeft" data-out-animation="fadeOutLeft" data-out-animation-delay="300">Welcome to my website. Take a tour in my music, video scores and live concerts.</p>
-									<div class="type-wrap text-left">
-										<h1 class="animated fadeInLeft" data-animation="fadeInLeft" data-out-animation="fadeOutLeft" data-out-animation-delay="900">
-											<span id="typed"></span>
-										</h1>
-									</div>
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
 
-									<!--									<div class="notify-btn main-menu">-->
-									<!--										<a  href="#contact" class="btn btn-default animated fadeInLeft" data-hover="Notify me" data-animation="fadeInLeft" data-animation-delay="1000" data-out-animation="fadeInLeft" data-out-animation-delay="600" data-toggle="modal" data-target="#notify-my"><span class="button-label text-left">Contact</span><span class="arrow-wrap"><span class="arrow"></span></span></a>-->
-									<!--									</div>-->
-								</div>
-							</section>
-							<!--/Content with Typing Intro-->
+  // Get todays date and time
+  var now = new Date().getTime();
+  
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+  
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
-						<!--Logo-->
-						<div class="logo align-center text-left">
-							<img src="img/logo-dark.png" alt="logo">
-						</div>
-						<span class="small-hr animated fadeInLeft" data-animation="fadeInLeft" data-out-animation="fadeOutLeft" data-out-animation-delay="200"></span>
-						<!--/Logo-->
-							<!--Notify Form-->
-							<section id="contact" class="section text-left">
-								<div class="preloader"></div>
-								<div class="main-menu">
-									<a class="close-notify black" href="#home" data-animation="fadeInDown" data-animation-delay="900" data-out-animation="fadeOutUp"
-									    data-out-animation-delay="100">
-										<div class="call-to-action">
-											<i class="fa fa-times fa-2x"></i>
-											<span class="top"></span>
-											<span class="right"></span>
-											<span class="bottom"></span>
-											<span class="left"></span>
-										</div>
-									</a>
-								</div>
-
-								<!--CONTENT CHANGED & <br> ADDED-->
-								<div class="notify-wrap">
-									<h3 class="wellcome-text" data-animation="fadeInLeft" data-animation-delay="900" data-out-animation="fadeOutLeft" data-out-animation-delay="100"
-									    data-ng-bind="notify || 'hello..'">Hello..</h3>
-									<form id="notifyMe" class="contact-form" action="notify-me.php" method="post">
-										<div class="input-wrap" data-animation="fadeInLeft" data-animation-delay="100" data-out-animation="fadeOutLeft" data-out-animation-delay="900">
-											<input data-ng-model="notify" class="col-lg-10  align-center form-control input input__field input__field--hoshi notify-input-box"
-											    name="email" placeholder="email id" type="email">
-											<label class="input__label input__label--hoshi input__label--hoshi-color-1"></label>
-										</div>
-										<button type="submit" data-hover="Send" class="btn btn-default progress-button btn-submit " data-animation="fadeInUp" data-animation-delay="900"
-										    data-out-animation="fadeOutUp" data-out-animation-delay="1300">
-											<span>
-												<span class="arrow-wrap">
-													<span class="arrow"></span>
-												</span>
-											</span>
-										</button>
-									</form>
-								</div>
-							</section>
-							<!--/Notify Form-->
-
-							<div class="copyright">
-								<ul class="social-icons">
-									<li>
-										<a href="https://www.facebook.com/Azzazy-405363306543063/" class="social-icon" target="_blank">
-											<i class="fa fa-facebook"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://goo.gl/Ry764w" class="social-icon" target="_blank">
-											<i class="fa fa-twitter"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://goo.gl/w7hspQ" class="social-icon" target="_blank">
-											<i class="fa fa-instagram"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://soundcloud.com/azzazy99" class="social-icon" target="_blank">
-											<i class="fa fa-soundcloud"></i>
-										</a>
-									</li>
-									<li>
-										<a href="https://www.youtube.com/channel/UC2v3NpkFmWCXMCo8_0bth0A" class="social-icon" target="_blank">
-											<i class="fa fa-youtube"></i>
-										</a>
-									</li>
-								</ul>
-								<p>Made with
-									<span style="color: #e25555;">&#9829;</span> by TruRate © 2019</p>
-							</div>
-						</div>
-						<!--/main content-->
-
-					</div>
-				</div>
-				<!--/Left Content Intro-->
-
-				
-			</div>
-			<!--/Intro-->
-
-			<!--About Section-->
-			<div class="page page-left">
-				<div class="page-inner full-height">
-					<div class="container align-center detail-info">
-						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-3">
-								<h3>About</h3>
-							</div>
-							<div class="col-lg-9 col-md-8 col-sm-8 col-xs-9">
-								<p class="tagline">Ana handcraft unique design & digital experiences to surprise the universe.</p>
-								<span class="small-hr"></span>
-								<p class="align-center">Pogody is a Modern & Innovative Responsive Coming Soon Template by hencework. Loaded with outstanding effects that
-									catches user's eye creating a subconscious mental interaction through color, font, effects, layout, icons & every
-									pixel on the screen.</p>
-
-								<!--Client Slider-->
-								<div id="qualities">
-									<div class="qualities">
-										<div class="item">
-											<span class="fa-qual">
-												<i class="fa fa-cog"></i>
-											</span>
-											<span class="qual-tag">Angular js</span>
-											<span class="qual-desc">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit.
-											</span>
-										</div>
-										<div class="item">
-											<span class="fa-qual">
-												<i class="fa fa-gavel"></i>
-											</span>
-											<span class="qual-tag">Bootstrap Sass</span>
-											<span class="qual-desc">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit.
-											</span>
-										</div>
-										<div class="item">
-											<span class="fa-qual">
-												<i class="fa fa-sitemap"></i>
-											</span>
-											<span class="qual-tag"> CSS3</span>
-											<span class="qual-desc">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit.
-											</span>
-										</div>
-										<div class="item">
-											<span class="fa-qual">
-												<i class="fa fa-space-shuttle"></i>
-											</span>
-											<span class="qual-tag">HTML5</span>
-											<span class="qual-desc">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit.
-											</span>
-										</div>
-										<div class="item">
-											<span class="fa-qual">
-												<i class="fa fa-soundcloud"></i>
-											</span>
-											<span class="qual-tag"> Mailchimp</span>
-											<span class="qual-desc">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit.
-											</span>
-										</div>
-										<div class="item">
-											<span class="fa-qual">
-												<i class="fa fa-trophy"></i>
-											</span>
-											<span class="qual-tag"> Ajax</span>
-											<span class="qual-desc">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit adipiscing elit.
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/Client Slider-->
-
-							</div>
-							<!--Team Slider-->
-							<div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-7 col-md-8 col-sm-8 col-xs-9 team-sec">
-								<p class="tagline">Our Team</p>
-								<span class="small-hr"></span>
-								<div id="team">
-									<div class="team">
-										<div class="item">
-											<div class="team-img-wrap">
-												<img src="img/team1.jpg" alt="team1">
-												<div class="team-overlay">
-													<ul class="social-icons">
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-facebook"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-twitter"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-linkedin"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-behance"></i>
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<span class="name"> marry</span>
-											<span class="desg"> ceo </span>
-										</div>
-										<div class="item">
-											<div class="team-img-wrap">
-												<img src="img/team2.jpg" alt="team1">
-												<div class="team-overlay">
-													<ul class="social-icons">
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-facebook"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-twitter"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-linkedin"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-behance"></i>
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<span class="name"> david</span>
-											<span class="desg"> coo </span>
-										</div>
-										<div class="item">
-											<div class="team-img-wrap">
-												<img src="img/team3.jpg" alt="team1">
-												<div class="team-overlay">
-													<ul class="social-icons">
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-facebook"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-twitter"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-linkedin"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-behance"></i>
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<span class="name"> john</span>
-											<span class="desg"> ceo </span>
-										</div>
-										<div class="item">
-											<div class="team-img-wrap">
-												<img src="img/team4.jpg" alt="team1">
-												<div class="team-overlay">
-													<ul class="social-icons">
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-facebook"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-twitter"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-linkedin"></i>
-															</a>
-														</li>
-														<li>
-															<a href="" class="social-icon">
-																<i class="fa fa-behance"></i>
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<span class="name"> elina</span>
-											<span class="desg"> ceo </span>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<!--/Team Slider-->
-						</div>
-					</div>
-					<div class="trans-overlay-dark-about"></div>
-				</div>
-			</div>
-			<!--/About Section-->
-
-			<!--Contact Section-->
-			<div class="page page-right">
-				<div class="page-inner full-height">
-					<div class="container align-center detail-info">
-						<div class="row">
-							<div data-ng-controller="ContactController" class="panel-body">
-								<h3 class="col-lg-12 col-xs-9">Get In Touch</h3>
-								<!--								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-9">-->
-								<!--									<form data-ng-submit="submit(contactform, $event)"  name="contactform" method="post" class="form-horizontal" role="form">-->
-								<!--										<div class="form-group input&#45;&#45;hoshi" data-ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">-->
-								<!--											<div class="input-wrap">-->
-								<!--												<input data-ng-model="formData.inputName" type="text" class="form-control input__field input input__field&#45;&#45;hoshi" id="inputName" name="inputName" placeholder="Name" required>-->
-								<!--												<label class="input__label input__label input__label&#45;&#45;hoshi input__label&#45;&#45;hoshi-color-1 input__label&#45;&#45;hoshi input__label&#45;&#45;hoshi-color-1" ></label>-->
-								<!--											</div>	-->
-								<!--										</div>-->
-								<!--										<div class="form-group  input&#45;&#45;hoshi" data-ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">-->
-								<!--											<div class="input-wrap">-->
-								<!--												<input data-ng-model="formData.inputEmail" type="email" class="form-control input input__field input__field&#45;&#45;hoshi" placeholder="Your Email" id="inputEmail" name="inputEmail" required>-->
-								<!--												<label class="input__label input__label&#45;&#45;hoshi input__label&#45;&#45;hoshi-color-1"></label>-->
-								<!--											</div>	-->
-								<!--										</div>-->
-								<!--										<div class="form-group  input&#45;&#45;hoshi" data-ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">-->
-								<!--											<div class="input-wrap">-->
-								<!--												<textarea data-ng-model="formData.inputMessage" class="form-control input input__field input__field&#45;&#45;hoshi" rows="4" id="inputMessage" name="inputMessage" placeholder="message" required></textarea>-->
-								<!--												<label class="input__label input__label&#45;&#45;hoshi input__label&#45;&#45;hoshi-color-1"></label>-->
-								<!--											</div>	-->
-								<!--										</div>-->
-								<!--										<div class="form-group">-->
-								<!--											<div class="align-center">-->
-								<!--												<button type="submit" class="btn btn-default" data-ng-disabled="submitButtonDisabled">-->
-								<!--													<span><span class="arrow-wrap"><span class="arrow"></span></span></span>-->
-								<!--												</button>-->
-								<!--											</div>-->
-								<!--										</div>-->
-								<!--									</form>-->
-								<!--									<p data-ng-class="result">{{ resultMessage }}</p>-->
-								<!--								</div>-->
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="align-center address-detail">
-										<p>Cairo, Egypt</p>
-										<div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-1">
-											<i class="fa fa-phone"></i>
-										</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-11 pad-left-zero">
-											<a href="callto:201090726926" target="_blank">+20 10-9072-6926</a>
-										</div>
-										<div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-1">
-											<i class="fa fa-envelope"></i>
-										</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-11 pad-left-zero">
-											<a href="mailto:hamsa.yousef@aucegypt.edu" target="_blank">hamsa.yousef@aucegypt.edu</a>
-										</div>
-										<div class="col-lg-12  pad-left-zero map">
-											<a class="" href="https://goo.gl/maps/YYLedpZgsGN2W2sw7" target="_blank">
-												<span class="">get direction</span>
-												<span class="go-arrow"></span>
-											</a>
-										</div>
-									</div>
-
-								</div>
-								<!--Google Map-->
-								<iframe src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" frameborder="0"
-								    style="border:0" allowfullscreen></iframe>
-								<!--/Google Map-->
-							</div>
-						</div>
-					</div>
-
-					<div class="trans-overlay-dark-contact"></div>
-				</div>
-			</div>
-			<!--/Contact Section-->
-
-		</div>
-		<!-- /Splitlayout -->
-
-	</div>
-	<!-- /Container -->
-
-	<!-- Scripts -->
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/angular.min.js"></script>
-	<script src="js/modernizr.custom.js"></script>
-	<script src="js/classie.js"></script>
-	<script src="js/cbpSplitLayout.js"></script>
-	<script src="js/jquery.countdown.js"></script>
-	<script src="js/typed.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/controllers.js"></script>
-	<script src="js/owl.carousel.js"></script>
-	<script src="js/input-text.js"></script>
-	<script src="js/notifyMe.js"></script>
-	<script src="js/jquery.placeholder.js"></script>
-	<script src="js/init.js"></script>
 </body>
-
 </html>
